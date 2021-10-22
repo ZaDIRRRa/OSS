@@ -1,0 +1,33 @@
+    1  123456
+    2  id
+    3  whoami
+    4  exit
+    5  yum install -y kernel-headers
+    6  rpm -qa | grep kernel
+    7  yum update kernel+
+    8  yum update kernel*
+    9  gcc
+   10  yum install -y gcc
+   11  yum install git
+   12  git 
+   13  git clone 
+   14  yum install git
+   15  exit
+   16  ls
+   17  ls test/
+   18  chown root file
+   19  touch file
+   20  chown root file
+   21  rw file
+   22  rm file
+   23  cd ~
+   24  ls
+   25  cd ..
+   26  ls
+   27  cd home
+   28  cd student/
+   29  cd test
+   30  chown file
+   31  chown root file
+   32  cd ..
+   33  history > lab2_history_root.txt
