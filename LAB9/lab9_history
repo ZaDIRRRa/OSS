@@ -1,0 +1,72 @@
+  120   ps xaf
+  121   ps xawf -eo pid,user,cgroup,args
+  122   systemd-cgls
+  123   ls -l /usr/lib/systemd/system/
+  124   ls -l /run/systemd/system/
+  125   ls -l /etc/systemd/system/
+  126   systemctl -t help
+  127   systemctl status
+  128   systemctl --type=service
+  129   systemctl --type=target
+  130   systemctl status auditd.service
+  131   systemctl is-active auditd.service
+  132   systemctl is-enabled auditd.service
+  133   systemctl list-dependencies --after auditd.service
+  134   systemctl list-dependencies --before auditd.service
+  135   systemctl list-units --type=service
+  136   systemctl list-units --type=service --all
+  137   systemctl list-units --type=socket --all
+  138   systemctl list-unit-files --type=service
+  139   systemctl --failed --type=service
+  140   systemctl status httpd.service
+  141   systemctl start httpd.service
+  142   systemctl status httpd.service
+  143   systemctl restart httpd.service
+  144   systemctl status httpd.service
+  145   systemctl stop httpd.service
+  146   systemctl enable httpd.service
+  147   systemctl status httpd.service
+  148   systemctl start httpd.service
+  149   systemctl status httpd.service
+  150   systemctl disable httpd.service
+  151   systemctl mask httpd.service
+  152   systemctl status httpd.service
+  153   systemctl start httpd.service
+  154   systemctl unmask httpd.service
+  155   systemctl list-units --type=target
+  156   systemctl list-units --type=target --all
+  157   systemctl get-default
+  158   ls -l /etc/systemd/system/default.target
+  159   systemctl set-default multi-user.target
+  160   systemctl isolate multi-user.target
+  161   systemctl --no-wall rescue
+  162   systemctl --no-wall emergency
+  163   systemctl poweroff
+  164   systemctl halt
+  165   systemctl --no-wall poweroff shutdown --poweroff 17:20
+  166   shutdown --halt +1
+  167   shutdown -c
+  168   systemctl --no-wall reboot
+  169   systemctl suspend
+  170   systemctl hibernate
+  171   hostnamectl
+  172   timedatectl
+  173   localectl
+  174   loginctl
+  175   loginctl session-status 2
+  176   loginctl show-user user1
+  177   nano mephi.service
+  178   cat mephi.service
+  179   ls -lZ mephi.service
+  180  journalctl -b
+  181  ausearch -c 'systemd' --raw | audit2allow -M my-systemd
+  182  semodule -X 300 -i my-systemd.pp
+  183  ausearch -m avc -ts recent
+  184  systemctl start mephi.service
+  185  journalctl -u mephi.service
+  186  nano mephi.path
+  187  cat mephi.path
+  188  systemctl enable mephi.path
+  189  systemctl start mephi.path
+  190  touch /tmp/mephi.file
+  191  history > history.txt
