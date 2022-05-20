@@ -1,0 +1,58 @@
+  20  ps xaf
+  21  ps xawf -eo pid,user,cgroup,args
+  22  systemd-cgls
+  23  ls -l /usr/lib/systemd/system/
+  24  ls -l /run/systemd/system/
+  25  ls -l /etc/systemd/system/
+  26  systemctl -t help
+  27  systemctl status
+  28  systemctl --type=service
+  29  systemctl --type=target
+  30  systemctl status auditd.service
+  31  systemctl is-active auditd.service
+  32  systemctl is-enabled auditd.service
+  33  ldd /bin/login | grep pam
+  34  ls -l /lib64/libpam*
+  35  ls -l /lib64/security/
+  36  vi /etc/pam.d/system-auth
+  37  vi /etc/pam.d/su
+  38  sudo nano /etc/pam.d/su
+  39  su -c "hostname mephi"
+  40  sudo nano /etc/pam.d/su
+  41  cp /etc/pam.d/su ~/pam.d_backup
+  42  sudo nano /etc/pam.d/su
+  43  sudo passwd user1
+  44  su - user1
+  45  sudo nano /etc/pam.d/su
+  46  su - user1
+  47  sudo nano /etc/pam.d/su
+  48  sudo nano /etc/pam.d/login
+  49  sudo touch /etc/securetty
+  50  su -
+  51  su - user1
+  52  sudo nano /etc/pam.d/login
+  53  man pam_pwquality
+  54  sudo nano /etc/security/pwquality.conf
+  55  sudo nano /etc/pam.d/system-auth
+  56  sudo passwd user1
+  57  sudo nano /etc/security/pwquality.conf
+  58  sudo nano /etc/pam.d/system-auth
+  59  man pam_limits
+  60  sudo nano /etc/security/limits.conf
+  61  su - user1
+  62  sudo nano /etc/security/limits.conf
+  63  wget https://raw.githubusercontent.com/linux-pam/linux-pam/master/examples/ch_usr.c
+  64  nano ch_usr.c
+  65  sudo yum install pam-devel
+  66  gcc ch_usr.c -o ch_usr.c -lpam -lpam_misc
+  67  sudo nano /etc/pam.d/check
+  68  ./ch_usr denis
+  69  sudo nano /etc/pam.d/check
+  70  ./ch_usr user1
+  71  nano ch_usr.c
+  72  gcc ch_usr.c -o ch_usr -lpam -lpam_misc
+  73  ./ch_usr denis
+  74  ./ch_usr user1
+  75  su -
+  76  ./ch_usr denis
+  78  history > history.txt
