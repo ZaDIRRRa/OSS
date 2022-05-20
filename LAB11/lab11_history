@@ -1,0 +1,13 @@
+   14  uname -r
+   15  rpmdev-setuptree
+   16  yumdownloader --source kernel
+   17  rpm -i kernel-3.10.0-1160.59.1.el7.src.rpm
+   18  ls rpmbuild/SPECS/
+   19  ls rpmbuild/SOURCES/
+   20  rpmbuild -bs ~/rpmbuild/SPECS/kernel.spec
+   21  ls ~/rpmbuild/SRPMS/
+   22  yum-builddep /home/tecatexas/rpmbuild/SRPMS/kernel-3.10.0-1160.59.1.el7.src.rpm
+   23  rpmbuild -bp --target=$(uname -m) rpmbuild/SPECS/kernel.spec
+   24  cd rpmbuild/BUILD/kernel*/linux*
+   25  ls ~/rpmbuild/BUILD/kernel-3.10.0-1160.59.1.el7/linux-3.10.0-1160.59.1.el7.x86_64/
+   26  history > lab11_hist
